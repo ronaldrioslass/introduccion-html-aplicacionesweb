@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 48px 16px;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #2d2a26;
+    background-color: #ece8e1;
+}
+
+/* la hoja del cv */
+body > div {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 72px;
+    background-color: #fffdf9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(60, 40, 20, 0.08);
+}
+
+h1 {
+    margin: 0 0 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: #1f1d1a;
+}
+
+/* ocupacion y ubicacion */
+h1 + p,
+h1 + p + p {
+    margin: 0;
+    font-size: 15px;
+    color: #6b645b;
+}
+
+h1 + p strong,
+h1 + p + p strong {
+    font-weight: 600;
+    color: #2d2a26;
+}
+
+h1 + p + p {
+    padding-bottom: 24px;
+    border-bottom: 2px solid #2d2a26;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 40px 0 16px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8a4b32;
+}
+
+h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #e2dcd2;
+}
+
+h2 + p {
+    margin: 0;
+    max-width: 65ch;
+}
+
+ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 4px;
+    padding-left: 4px;
+}
+
+li::marker {
+    color: #8a4b32;
+}
+
+/* contacto */
+ul:last-child {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul:last-child li {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    padding-left: 0;
+}
+
+ul:last-child strong {
+    font-weight: 600;
+    color: #6b645b;
+}
+
+::selection {
+    background-color: #f0d9cc;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 0;
+    }
+
+    body > div {
+        padding: 40px 24px;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
