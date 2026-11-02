@@ -46,6 +46,42 @@
             <li><strong>Celular: </strong>0996753685</li>
             <li><strong>Correo: </strong>ronaldrioslass@gmail.com</li>
         </ul>
+        <h2>Calculadora</h2>
+        <form method="post">
+            <label for="numero1">Número 1</label>
+            <input type="number" step="any" id="numero1" name="numero1" required>
+            <label for="numero2">Número 2</label>
+            <input type="number" step="any" id="numero2" name="numero2" required>
+            <div>
+                <button type="submit" name="operacion" value="sumar">Sumar</button>
+                <button type="submit" name="operacion" value="restar">Restar</button>
+                <button type="submit" name="operacion" value="multiplicar">Multiplicar</button>
+                <button type="submit" name="operacion" value="dividir">Dividir</button>
+            </div>
+        </form>
+        <?php
+        if (isset($_POST['operacion'])) {
+            $numero1 = $_POST['numero1'];
+            $numero2 = $_POST['numero2'];
+            $operacion = $_POST['operacion'];
+
+            if ($operacion == 'sumar') {
+                $resultado = $numero1 + $numero2;
+            } elseif ($operacion == 'restar') {
+                $resultado = $numero1 - $numero2;
+            } elseif ($operacion == 'multiplicar') {
+                $resultado = $numero1 * $numero2;
+            } elseif ($operacion == 'dividir') {
+                if ($numero2 == 0) {
+                    $resultado = 'No se puede dividir para cero';
+                } else {
+                    $resultado = $numero1 / $numero2;
+                }
+            }
+
+            echo "<p><strong>Resultado:</strong> $resultado</p>";
+        }
+        ?>
     </div>
 </body>
 </html>

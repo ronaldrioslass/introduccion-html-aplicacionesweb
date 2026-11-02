@@ -89,20 +89,62 @@ li::marker {
 }
 
 /* contacto */
-ul:last-child {
+ul:last-of-type {
     padding-left: 0;
     list-style: none;
 }
 
-ul:last-child li {
+ul:last-of-type li {
     display: grid;
     grid-template-columns: 96px 1fr;
     padding-left: 0;
 }
 
-ul:last-child strong {
+ul:last-of-type strong {
     font-weight: 600;
     color: #6b645b;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 8px 16px;
+    align-items: center;
+    max-width: 400px;
+}
+
+form div {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+input,
+button {
+    font: inherit;
+    padding: 8px 12px;
+}
+
+input {
+    border: 1px solid #c9c1b5;
+    background-color: #fffdf9;
+}
+
+button {
+    border: none;
+    background-color: #8a4b32;
+    color: #fffdf9;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6f3b27;
+}
+
+form + p {
+    margin: 16px 0 0;
 }
 
 ::selection {
